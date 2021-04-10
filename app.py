@@ -116,31 +116,7 @@ movies_df['title'] = movies_df['title'].apply(lambda x: x.strip())
 movies_df = movies_df.drop('genres', 1)
 
 ratings_df = ratings_df.drop('timestamp', 1)
- 
-userInput = [
-            {'title':'Toy Story', 'rating':4.5},
-            {'title':'Jumanji', 'rating':4.5},
-            {'title':'Back to the Future', 'rating':5},
-            {'title':'Back to the Future Part II', 'rating':4},
-            {'title':'Back to the Future Part III', 'rating':3},
-            {'title':'Mad Max Beyond Thunderdome', 'rating':4},
-            {'title':'Hook', 'rating':4},
-            {'title':'Ghostbusters (a.k.a. Ghost Busters)', 'rating':4.5},
-            {'title':'Ghostbusters II', 'rating':3},
-            {'title':'2001: A Space Odyssey', 'rating':5},
-            {'title':'Who Framed Roger Rabbit?', 'rating':5},
-            {'title':'Saving Private Ryan', 'rating':4},
-            {'title':'Stargate', 'rating':4},
-            {'title':'Goofy Movie', 'rating':5},
-            {'title':'Extremely Goofy Movie, An', 'rating':2.5},
-            {'title':'Guardians of the Galaxy', 'rating':5},
-            {'title':'Guardians of the Galaxy 2', 'rating':5},
-            {'title':'My Flesh and Blood', 'rating':4.5},
-            {'title':'La La Land', 'rating':1},
-            {'title':'Lion King, The', 'rating':4.5}
-         ]
 
-#inputMovies = pd.DataFrame(userInput)
 def recommendation_system(inputMovies):
     #Filtering out the movies by title
     inputId = movies_df[movies_df['title'].isin(inputMovies['title'].tolist())]
